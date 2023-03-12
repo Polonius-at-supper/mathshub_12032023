@@ -82,4 +82,73 @@ for (let i = 0; i < choosedEl.length; i++){
     choosedEl[i].addEventListener('click', eventFunc)
 }
 
-choosedEl[2].removeEventListener("click", eventFunc)
+const TimeIsOver = () => {
+    alert("Время вышло!")
+}
+
+// setTimeout(TimeIsOver, 5000)
+//const alarm = setInterval(TimeIsOver, 3000)
+
+// const alarm = setInterval(() => {
+//     let WantSleep = confirm("Хотите ли вы спать?")
+//     if (WantSleep) {
+//         console.log('tic')
+//     } else {
+//         clearInterval(alarm)
+//     }
+// }, 3000)
+
+// console.log(1)
+// setTimeout(() => {
+//     console.log(2)
+// }, 0)
+// console.log(3)
+
+const postsBlock = document.querySelector(".post_block-container")
+const showPostBTN = document.querySelector(".post_blocks button")
+
+function addPost(title, body) {
+    const postsTitle = document.createElement("h3")
+    const postsBody = document.createElement("span")
+    const postItem = document.createElement("p")
+
+    postsTitle.innerText = title
+    postsBody.innerText = body
+
+    postItem.append(postsTitle, postsBody)
+    postsBlock.append(postItem)
+}
+
+function getPosts() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => res.json())
+    .then(data => {
+        for (item of data){
+            addPost(item.title, item.body)
+        }
+    })
+    .catch(err => console.log(err.message))
+}
+
+
+// function createPost(title, body, userID) {
+//     fetch("https://jsonplaceholder.typicode.com/posts", {
+//         method: "POST",
+//         body: JSON.stringify ({
+//             title: title,
+//             body: body,
+//             userID: userID,
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//         },
+//     })
+//     .then(res => {
+//         console.log(res)
+//     })
+//     .catch(err => console.log(err.message))
+// }
+
+// createPost("title", "body", 15)
+
+showPostBTN.onclick = () => {getPosts()}
