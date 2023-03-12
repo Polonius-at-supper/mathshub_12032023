@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS';
+
+}
+
+header{
+    background-color: #3D4D5C;
+    height: 50px;
+}
+
+nav{
+    /* border: 2px dotted #8599AD;*/
+    height: inherit;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    padding: 0 15px;
+    font-size: 20px;
+}
+
+.about_us_describtion{
+    display: flex;
+    flex-direction: column;
+}
+
+.about_us_describtion * {
+    padding: 4px;
+}
+
+.about_us {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_us img{
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.my_game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.my_game input, .my_game button {
+    border: none;
+    background-color: lightgrey;
+    outline: none;
+    cursor: pointer;
+    margin: 6px;
+    min-height: 40px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.my_game button {
+    max-width: max-content;
+    padding: 0px 10px;
+}
+
+.choosed_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choosed_block-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 650px;
+}
+
+.choosed_block-container > div {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darksalmon;
+
+}
+
+.choosed_element {
+    border: 3px solid darkblue;
+}
+
